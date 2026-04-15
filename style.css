@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#rickroll {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: none;
+}
+
+#text {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  color: white;
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 10px red, 0 0 20px red;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
