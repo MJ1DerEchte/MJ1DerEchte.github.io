@@ -1,41 +1,24 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐟 Spinning Fish! 🐟</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Spinning Fish GIF from Tenor -->
-  <div id="fish-container">
-    <img src="https://media.tenor.com/HKWbDjWCFz8AAAAC/fish-spinning.gif" alt="Spinning Fish" id="spinning-fish">
-  </div>
-
-  <!-- Goofy Sound Effects -->
-  <audio id="goofy-sound" autoplay loop>
-    <source src="https://www.soundjay.com/misc/sounds/cartoon_splat.mp3" type="audio/mpeg">
-    <source src="https://freesound.org/data/previews/316/316847_5265873-lq.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <div id="text">🐟 SPINNING FISH! 🐟</div>
-
-  <!-- Click anywhere for more goofy sounds -->
-  <script>
-    document.body.addEventListener('click', function() {
-      // Random goofy sound URLs
-      const goofySounds = [
-        'https://www.soundjay.com/misc/sounds/cartoon_boing.mp3',
-        'https://www.soundjay.com/misc/sounds/cartoon_splat.mp3'
-      ];
-      
-      const randomSound = goofySounds[Math.floor(Math.random() * goofySounds.length)];
-      const audio = new Audio(randomSound);
-      audio.play().catch(e => console.log('Audio play failed:', e));
-    });
-  </script>
-
+    <img src="https://media.giphy.com/media/VbafZ8WQZpQ92/giphy.gif" alt="Spinning Fish">
 </body>
 </html>
