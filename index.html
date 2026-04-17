@@ -3,20 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎵 Never Gonna Give You Up!</title>
+  <title>🐟 Spinning Fish! 🐟</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- YouTube Video fullscreen mit autoplay -->
-  <iframe
-    id="rickroll"
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&modestbranding=1&showinfo=0"
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-  </iframe>
+  <!-- Spinning Fish GIF from Tenor -->
+  <div id="fish-container">
+    <img src="https://media.tenor.com/HKWbDjWCFz8AAAAC/fish-spinning.gif" alt="Spinning Fish" id="spinning-fish">
+  </div>
 
-  <div id="text">🎵 Never Gonna Give You Up! 🎵</div>
+  <!-- Goofy Sound Effects -->
+  <audio id="goofy-sound" autoplay loop>
+    <source src="https://www.soundjay.com/misc/sounds/cartoon_splat.mp3" type="audio/mpeg">
+    <source src="https://freesound.org/data/previews/316/316847_5265873-lq.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="text">🐟 SPINNING FISH! 🐟</div>
+
+  <!-- Click anywhere for more goofy sounds -->
+  <script>
+    document.body.addEventListener('click', function() {
+      // Random goofy sound URLs
+      const goofySounds = [
+        'https://www.soundjay.com/misc/sounds/cartoon_boing.mp3',
+        'https://www.soundjay.com/misc/sounds/cartoon_splat.mp3'
+      ];
+      
+      const randomSound = goofySounds[Math.floor(Math.random() * goofySounds.length)];
+      const audio = new Audio(randomSound);
+      audio.play().catch(e => console.log('Audio play failed:', e));
+    });
+  </script>
 
 </body>
 </html>
