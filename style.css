@@ -1,12 +1,109 @@
-.spinning-fish {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  overflow: visible;
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #073b4c;
+  background: linear-gradient(180deg, #49b6ff 0%, #087ea4 40%, #045b7a 100%);
 }
 
-body {
-  background-color: #ffffff; /* Set to white or any desired color */
-  overflow: auto; /* Allows scrolling if needed */
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.game-card {
+  width: min(900px, 100%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 8px 0 18px;
+}
+
+.hud {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-weight: bold;
+}
+
+#startButton {
+  display: block;
+  margin: 8px auto 10px;
+  border: 0;
+  border-radius: 999px;
+  background: #00c2ff;
+  color: #003b4e;
+  font-weight: bold;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#startButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 135, 180, 0.3);
+}
+
+.message {
+  text-align: center;
+  min-height: 24px;
+  margin: 0 0 12px;
+}
+
+.game-area {
+  position: relative;
+  height: 58vh;
+  min-height: 320px;
+  max-height: 560px;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.25), transparent 34%),
+    radial-gradient(circle at 80% 35%, rgba(255, 255, 255, 0.2), transparent 35%),
+    linear-gradient(180deg, #8fe8ff 0%, #2da6d1 55%, #0a709b 100%);
+}
+
+.fish {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  font-size: clamp(26px, 4vw, 38px);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  transition: transform 0.9s ease;
+  animation: bob 1s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 640px) {
+  .hud {
+    gap: 14px;
+    font-size: 0.95rem;
+  }
+
+  .game-area {
+    min-height: 260px;
+    height: 52vh;
+  }
 }
