@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>Catch the Fish</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="https://media.giphy.com/media/VbafZ8WQZpQ92/giphy.gif" alt="Spinning Fish">
+    <main class="app">
+        <section class="game-card">
+            <h1>Catch the Fish 🐟</h1>
+            <p class="subtitle">Click as many fish as possible in 30 seconds!</p>
+
+            <div class="hud">
+                <p>Score: <span id="score">0</span></p>
+                <p>Time: <span id="time">30</span>s</p>
+            </div>
+
+            <button id="startButton" type="button">Start Game</button>
+            <p id="message" class="message">Press start to begin.</p>
+
+            <div id="gameArea" class="game-area" aria-label="Game area"></div>
+        </section>
+    </main>
+
+    <script src="game.js"></script>
 </body>
 </html>
