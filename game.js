@@ -16,7 +16,8 @@ let timerIntervalId = null;
 let spawnIntervalId = null;
 
 function randomInRange(max, min = 0) {
-  return Math.max(min, Math.floor(Math.random() * max));
+  if (max <= min) return min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 function clearFish() {
