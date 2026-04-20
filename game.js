@@ -15,7 +15,7 @@ let isRunning = false;
 let timerIntervalId = null;
 let spawnIntervalId = null;
 
-function randomInRange(max, min = 0) {
+function randomInRange(min, max) {
   if (max <= min) return min;
   return Math.floor(Math.random() * (max - min) + min);
 }
@@ -32,8 +32,8 @@ function updateHud() {
 function moveFish(fish) {
   const width = Math.max(20, gameArea.clientWidth - 44);
   const height = Math.max(20, gameArea.clientHeight - 44);
-  fish.style.left = `${randomInRange(width)}px`;
-  fish.style.top = `${randomInRange(height)}px`;
+  fish.style.left = `${randomInRange(0, width)}px`;
+  fish.style.top = `${randomInRange(0, height)}px`;
 }
 
 function spawnFish() {
@@ -52,7 +52,7 @@ function spawnFish() {
     if (fish.isConnected && isRunning) moveFish(fish);
   });
 
-  const lifetime = MIN_FISH_LIFETIME_MS + randomInRange(FISH_LIFETIME_VARIATION_MS);
+  const lifetime = MIN_FISH_LIFETIME_MS + randomInRange(0, FISH_LIFETIME_VARIATION_MS);
   const removeTimeoutId = setTimeout(() => fish.remove(), lifetime);
 
   fish.addEventListener("click", () => {
